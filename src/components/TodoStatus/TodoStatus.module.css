@@ -1,0 +1,28 @@
+.TodoStatus__container {
+  margin: 1.2rem;
+}
+.TodoStatus__items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.TodoStatus__item {
+  display: flex;
+  align-items: center;
+}
+.TodoStatus__count {
+  width: 1.6rem;
+  height: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: blue;
+  margin-right: 0.4rem;
+  color: white;
+}
+.TodoStatus__label {
+  color: #423c82;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
