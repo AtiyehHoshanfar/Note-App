@@ -1,0 +1,29 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+input[type="text"] {
+  background-color: transparent;
+  border: 0;
+  width: 100%;
+  outline: none;
+  padding: 0.4rem 0.8rem;
+}
+::placeholder {
+  font-size: 1.6rem;
+}
+button {
+  padding: 1.2rem;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}

@@ -1,0 +1,23 @@
+.AddNewTodo__container {
+  margin: 0.8rem;
+}
+.AddNewTodo__title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 1.4rem;
+}
+.AddNewTodo__input {
+  border: 2px solid #dcd6d6;
+  padding: 0.8rem;
+  border-radius: 12px;
+  margin-bottom: 0.8rem;
+}
+.AddNewTodo__button {
+  border-radius: 12px;
+  color: white;
+  font-size: 1.8rem;
+  width: 100%;
+  background-color: blue;
+  margin-top: 1.6rem;
+}

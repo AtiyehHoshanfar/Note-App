@@ -1,0 +1,38 @@
+.TodoList__container {
+  display: flex;
+  flex-direction: column;
+}
+.TodoItem__container {
+  background-color: #e5e5fc;
+  padding: 1.2rem;
+  margin: 0.8rem;
+  border-radius: 12px;
+}
+.TodoItem__title {
+  color: #423c82;
+  font-size: 2.2rem;
+  font-weight: 700;
+
+  margin-bottom: 0.2rem;
+}
+.TodoItem__description {
+  color: #a89acf;
+  font-size: 1.8rem;
+  margin-bottom: 0.4rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 2px solid #ffffff;
+}
+.TodoItem__detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.TodoItem__date {
+  color: #a89acf;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.TodoItem__completed {
+  opacity: 60%;
+  text-decoration: line-through;
+}
