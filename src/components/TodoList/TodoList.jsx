@@ -1,10 +1,10 @@
 import styles from "./TodoList.module.css";
 import "./TodoList.module.css";
-function TodoList({ todos, setTodos }) {
+function TodoList({ todos, onDelete,onComplete }) {
   return (
     <div className={styles.TodoList__container}>
       {todos.map((todo) => (
-        <TodoItem setTodos={setTodos} key={todo.id} todo={todo} />
+        <TodoItem onComplete={onComplete} onDelete={onDelete} key={todo.id} todo={todo} />
       ))}
     </div>
   );
@@ -12,18 +12,8 @@ function TodoList({ todos, setTodos }) {
 
 export default TodoList;
 
-function TodoItem({ todo, setTodos }) {
-  const handleDelete = (id) => {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
-  };
+function TodoItem({ todo, onComplete,onDelete }) {
 
-  const handleComplete = (id) => {
-    setTodos((prevTodos) =>
-      prevTodos.map((todo) => {
-        return todo.id === id ? { ...todo, completed: !todo.completed } : todo;
-      })
-    );
-  };
   return (
     <div
       className={`${styles.TodoItem__container}  ${
@@ -41,8 +31,8 @@ function TodoItem({ todo, setTodos }) {
           })}
         </span>
         <div className={styles.TodoItem__operations}>
-          <button onClick={() => handleDelete(todo.id)}>❌</button>
-          <button onClick={() => handleComplete(todo.id)}>✔️</button>
+          <button onClick={() => onDelete(todo.id)}>❌</button>
+          <button onClick={() => onComplete(todo.id)}>✔️</button>
         </div>
       </div>
     </div>
