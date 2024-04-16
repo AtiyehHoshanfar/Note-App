@@ -1,5 +1,7 @@
 .TodoStatus__container {
   margin: 1.2rem;
+  grid-column:2/3 ;
+  grid-row: 2/3;
 }
 .TodoStatus__items {
   display: flex;

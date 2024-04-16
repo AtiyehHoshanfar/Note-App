@@ -1,0 +1,9 @@
+@media screen and (min-width:768px) {
+    .appContainer{
+        max-width: 1240px;
+        margin:  0 auto;
+        display: grid;
+        grid-template-columns: 35% 65%;
+        grid-template-rows: 140px 50px auto;
+    }
+}

@@ -1,16 +1,19 @@
 .AddNewTodo__container {
-  margin: 0.8rem;
+  /* margin: 0.8rem; */
+  grid-column:1/2 ;
+  grid-row: 2/4;
 }
 .AddNewTodo__title {
   font-size: 3.2rem;
   font-weight: 800;
   color: #333;
-  margin-bottom: 1.4rem;
+  margin-bottom:2.2rem;
 }
 .AddNewTodo__input {
   border: 2px solid #dcd6d6;
   padding: 0.8rem;
   border-radius: 12px;
+  background-color: #fff;
   margin-bottom: 0.8rem;
 }
 .AddNewTodo__button {

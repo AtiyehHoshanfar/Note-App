@@ -19,7 +19,8 @@ function AddNewTodo({ handleTodos }) {
     setDescription("");
   };
   return (
-    <div className={styles.AddNewTodo__container}>
+<div>
+<div className={styles.AddNewTodo__container}>
       <h2 className={styles.AddNewTodo__title}>Add New Todo</h2>
       <form>
         <div className={styles.AddNewTodo__input}>
@@ -47,6 +48,7 @@ function AddNewTodo({ handleTodos }) {
         </button>
       </form>
     </div>
+</div>
   );
 }
 

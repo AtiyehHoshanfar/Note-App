@@ -1,6 +1,8 @@
 .TodoList__container {
   display: flex;
   flex-direction: column;
+  grid-column:2/3 ;
+  grid-row: 3/4;
 }
 .TodoItem__container {
   background-color: #e5e5fc;

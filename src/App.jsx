@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+import styles from "./App.module.css"
 
 import AddNewTodo from "./components/AddNewTodo/AddNewTodo";
 import TodoList from "./components/TodoList/TodoList";
@@ -20,11 +20,11 @@ function App() {
     );
   };
   return (
-    <div>
-      <NoteAppHeader/>
-      <AddNewTodo handleTodos={setTodos} />
-      <TodoStatus todos={todos}/>
-      <TodoList onDelete={handleDelete} onComplete={handleComplete} todos={todos} />
+    <div className={styles.appContainer}>
+      <NoteAppHeader className={styles.NoteAppHeader__container}/>
+      <AddNewTodo className={styles.AddNewTodo__container} handleTodos={setTodos} />
+      <TodoStatus className={styles.TodoStatus__container} todos={todos}/>
+      <TodoList className={styles.TodoList__container} onDelete={handleDelete} onComplete={handleComplete} todos={todos} />
 
     </div>
   );
