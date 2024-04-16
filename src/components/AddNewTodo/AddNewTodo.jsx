@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./AddNewTodo.module.css";
-function AddNewTodo({ handleTodos }) {
+function AddNewTodo({ handleTodos,todos }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const handleSubmitTodo = (event) => {
@@ -17,6 +17,9 @@ function AddNewTodo({ handleTodos }) {
     handleTodos((prev) => [...prev, newTodo]);
     setTitle("");
     setDescription("");
+    const savedTodos= todos
+    savedTodos.push(newTodo)
+    localStorage.setItem('todos',JSON.stringify(savedTodos));
   };
   return (
 <div>
