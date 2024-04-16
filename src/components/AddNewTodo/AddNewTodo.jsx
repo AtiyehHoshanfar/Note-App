@@ -10,7 +10,7 @@ function AddNewTodo({ handleTodos,todos }) {
       id: Date.now(),
       title,
       description,
-      createdAt: new Date().toISOString(),
+      createdAt: Date.now(),
       completed: false,
     };
 

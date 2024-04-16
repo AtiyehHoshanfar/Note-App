@@ -24,9 +24,30 @@ function App() {
       })
     );
   };
+  const handleSort=(e)=>{
+    console.log(e.target.value)
+    switch(e.target.value){
+      case 0:{
+        const earliest=[...todos].sort((a,b)=>a.createdAt-b.createdAt)
+        setTodos(earliest)
+        break;
+      }
+      case 1:{
+        const latest=[...todos].sort((a,b)=>b.createdAt-a.createdAt)
+        setTodos(latest)
+        break;
+      }
+      case 2:{
+        const completed=[...todos].sort((a,b)=>Number(b.completed)-Number(a.completed))
+        console.log(completed)
+        setTodos(completed)
+        break;
+      }
+    }
+      }
   return (
     <div className={styles.appContainer}>
-      <NoteAppHeader className={styles.NoteAppHeader__container} />
+      <NoteAppHeader className={styles.NoteAppHeader__container} onSort={handleSort} />
       <AddNewTodo
         className={styles.AddNewTodo__container}
         handleTodos={setTodos}

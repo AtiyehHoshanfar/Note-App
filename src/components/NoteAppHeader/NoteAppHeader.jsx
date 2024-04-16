@@ -3,7 +3,7 @@ import styles from "./NoteAppHeader.module.css";
 import { useRef } from "react";
 import useOutsideClick from "../hook/useOutsideClick";
 
-function NoteAppHeader() {
+function NoteAppHeader({onSort}) {
   const [isOpenSort, setIsOpenSort] = useState(false);
   const month = [
     "January",
@@ -20,6 +20,7 @@ function NoteAppHeader() {
     "December",
   ];
   const day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
   const date=new Date()
   const sortRef = useRef();
   useOutsideClick("sortItems-container", sortRef, () => setIsOpenSort(false));
@@ -61,9 +62,9 @@ function NoteAppHeader() {
             isOpenSort && styles.visible
           }`}
         >
-          <li className={styles.NoteAppHeader__sortItem}>Earliest</li>
-          <li className={styles.NoteAppHeader__sortItem}>Latest</li>
-          <li className={styles.NoteAppHeader__sortItem}>Completed</li>
+          <li className={styles.NoteAppHeader__sortItem} onClick={onSort} value="0">Earliest</li>
+          <li className={styles.NoteAppHeader__sortItem} onClick={onSort} value="1" >Latest</li>
+          <li className={styles.NoteAppHeader__sortItem} onClick={onSort} value="2" >Completed</li>
         </ul>
       </div>
     </div>
