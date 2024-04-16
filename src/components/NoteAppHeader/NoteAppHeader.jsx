@@ -3,7 +3,7 @@ import styles from "./NoteAppHeader.module.css";
 import { useRef } from "react";
 import useOutsideClick from "../hook/useOutsideClick";
 
-function NoteAppHeader({onSort}) {
+function NoteAppHeader({ onSort }) {
   const [isOpenSort, setIsOpenSort] = useState(false);
   const month = [
     "January",
@@ -21,30 +21,30 @@ function NoteAppHeader({onSort}) {
   ];
   const day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-  const date=new Date()
+  const date = new Date();
+
   const sortRef = useRef();
   useOutsideClick("sortItems-container", sortRef, () => setIsOpenSort(false));
   return (
     <div className={styles.NoteAppHeader__container}>
       <div className={styles.NoteAppHeader__content}>
         <div className={styles.NoteAppHeader__date}>
-          <span className={styles.dayOfWeek}>
-            {day[date.getDay() - 1]}
-          </span>
+          <span className={styles.dayOfWeek}>{day[date.getDay() - 1]}</span>
           <span className={styles.dayOfMonth}>{date.getDate()}</span>
           <span className={styles.month}>{month[date.getMonth()]}</span>
         </div>
         <h1 className={styles.NoteAppHeader__time}>
-          Good{" "}
-          {0 <= date.getHours() + 1 < 6
-            ? "Morning"
-            : 6 <= date.getHours() + 1 < 12
-            ? "Afternoon"
-            : 12 <= date.getHours() + 1 < 18
-            ? "Evening"
-            : 18 <= date.getHours() + 1 < 24
-            ? "Night"
-            : ""}
+          {`Good ${
+            0 <= date.getHours() && date.getHours() < 5
+              ? "Night"
+              : 5 <= date.getHours() && date.getHours() < 11
+              ? "Morning"
+              : 11 <= date.getHours() && date.getHours() < 17
+              ? "Afternoon"
+              : 17 <= date.getHours() && date.getHours() < 23
+              ? "Evening"
+              : ""
+          }`}
         </h1>
       </div>
 
@@ -62,9 +62,27 @@ function NoteAppHeader({onSort}) {
             isOpenSort && styles.visible
           }`}
         >
-          <li className={styles.NoteAppHeader__sortItem} onClick={onSort} value="0">Earliest</li>
-          <li className={styles.NoteAppHeader__sortItem} onClick={onSort} value="1" >Latest</li>
-          <li className={styles.NoteAppHeader__sortItem} onClick={onSort} value="2" >Completed</li>
+          <li
+            className={styles.NoteAppHeader__sortItem}
+            onClick={onSort}
+            value="0"
+          >
+            Earliest
+          </li>
+          <li
+            className={styles.NoteAppHeader__sortItem}
+            onClick={onSort}
+            value="1"
+          >
+            Latest
+          </li>
+          <li
+            className={styles.NoteAppHeader__sortItem}
+            onClick={onSort}
+            value="2"
+          >
+            Completed
+          </li>
         </ul>
       </div>
     </div>
